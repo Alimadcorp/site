@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+  
   const introText = document.querySelector('.intro-text');
   const container = document.querySelector('.container');
   const toggleCheckbox = document.getElementById('theme-toggle-checkbox');
@@ -18,10 +19,31 @@ document.addEventListener('DOMContentLoaded', function() {
     "Or contact me over discord."
   ];
   let currentIndex = 0;
-
+  function toggleNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  
   // Initial text
   introText.textContent = texts[currentIndex];
 
+  // Load theme preference from localStorage
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggleCheckbox.checked = true;
+  }
+
+  window.toggleTheme = function() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  };
+
+  
   // Change text with manual transform on container click
   document.getElementById('bgCanvas').addEventListener('click', () => {
     onKlick();
@@ -46,17 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 50);
     }, 500);
   }
-  // Load theme preference from localStorage
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    toggleCheckbox.checked = true;
-  }
-
-  window.toggleTheme = function() {
-    const isDarkMode = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  };
 
   // Setup canvas for random shapes
   const canvas = document.getElementById('bgCanvas');
@@ -124,4 +135,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   animateShapes();
+  
 });
+function toggleNav() {
+  const nav = document.getElementById("myTopnav");
+  nav.classList.toggle("responsive");
+}
+
+function toggleTheme() {
+  document.body.classList.toggle("dark-mode");
+}

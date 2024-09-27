@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alimad - Game Development</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="header">
+    <h2>Alimad Co</h2>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Services 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="games.html" class="active">Game Development</a>
+          <a href="cgi.html">CGI & Graphics</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn">Contact 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="mailto:alimad.co.ltd@gmail.com">Email</a>
+          <a href="social.html">Social Media</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">About 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle-checkbox" onclick="toggleTheme()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <div class="container">
+    <h1>Animation Projects</h1>
+    <div class="game-list">
+      <div class="game-item">
+        <a href="https://youtube.com/watch?v=398rn3f3f3"><img src="project1.jpg" alt="Project1"></a>
+        <h3>Project 1 Title</h3>
+        <p>Description of Project 1.</p>
+      </div>
+      <div class="game-item">
+        <a href="https://youtube.com/watch?v=398rf3f3f3"><img src="project2.jpg" alt="Proect 2"></a>
+        <h3>Project 2 Title</h3>
+        <p>Description of Project 2.</p>
+      </div>
+      <!-- Add more game items as needed -->
+    </div>
+  </div>
+  
+  <script src="script.js" defer></script>
+</body>
+</html>
